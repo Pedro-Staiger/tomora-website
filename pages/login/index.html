@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomora | login</title>
+    <!--Importação CSS-->
+    <link rel="stylesheet" href="config/style.css">
+    <!--Ícone navbar-->
+    <link rel="shortcut icon" href="../../pictures/logo.png">
+    <!--Estilização da barra de navegação (Android)-->
+    <meta name="theme-color" content="#212529">
+    <!--Importação da fonte Poppins-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="script/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Tomora</h1>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="index.html">Login</a></li>
+            <li><a href="../registro/index.html">Registre-se</a></li>
+            <li><a href="../download/index.html">Download</a></li>
+            <li><a href="../sobre/index.html">Sobre nós</a></li>
+        </ul>
+    </header>
+    <main>
+        <form>
+            <h2>Login</h2>
+            <input type="email" placeholder="E-mail" id="input-email">
+            <input type="password" placeholder="Senha" id="input-senha">
+            <div id="botoes-form">
+                <button type="button" class="btn-1" onclick="getLogin()">Entrar</button>
+                <button type="button" class="btn-2" onclick="mostrarSenha()">Mostrar senha</button>
+                <a href="../registro/index.html">Não possui uma conta? Registre-se</a>
+                <div><p id="label"></p><img src="pictures/loading.png"></div>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <h2>Tomora - Saúde Pontual</h2>
+    </footer>
+</body>
+
+</html>

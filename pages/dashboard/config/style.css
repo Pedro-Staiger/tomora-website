@@ -1,0 +1,450 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    max-width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1C2F3E;
+    gap: 40px;
+}
+
+header {
+    width: 100%;
+    min-height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #212529;
+}
+
+header h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 4rem;
+    color: #A89CD6;
+}
+
+header ul {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    font-family: sans-serif;
+    font-size: 1.75rem;
+    color: #e9ecef;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+header ul li a:hover {
+    font-size: 1.8rem;
+    color: #B7E4C7;
+}
+
+main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: start;
+    text-align: left;
+    animation: spawn 0.3s ease-out;
+}
+
+main::-webkit-scrollbar {
+    display: block;
+}
+
+@keyframes spawn {
+    0% {
+        transform: scale(0.7);
+        opacity: 15%;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 100%;
+    }
+}
+
+main h2 {
+    width: 100%;
+    height: auto;
+    font-family: sans-serif;
+    font-size: 2.2rem;
+    color: #B7E4C7;
+    text-align: center;
+}
+
+main div {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+main .lembrete {
+    width: auto;
+    min-width: 400px;
+    max-width: 500px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background-color: #212529;
+    padding: 30px;
+    gap: 5px;
+    border-radius: 15px;
+}
+
+main .lembrete h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.8rem;
+    color: #A89CD6;
+}
+
+main .lembrete div {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+main .lembrete div b {
+    font-family: sans-serif;
+    font-size: 1.4rem;
+    color: #dee2e6;
+}
+
+main .lembrete div p {
+    font-family: sans-serif;
+    font-size: 1.4rem;
+    color: #dee2e6;
+}
+
+main .lembrete button {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: red;
+    opacity: 50%;
+    transition: 0.3s ease-out;
+    font-family: arial;
+    font-size: 1.25rem;
+}
+
+main .lembrete button:hover {
+    opacity: 75%;
+    background: none;
+}
+
+main .confirm-button {
+    width: 200px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: arial;
+    font-size: 1.25rem;
+    background-color: #495057;
+    border: none;
+    color: #e9ecef;
+    cursor: pointer;
+    transition: 0.25s ease-out;
+}
+
+main .confirm-button:hover {
+    background-color: #A89CD6;
+    transform: scale(1.05);
+}
+
+main form {
+    width: auto;
+    height: auto;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+main form input {
+    width: 300px;
+    height: 45px;
+    padding: 5px;
+    outline: none;
+    font-family: arial;
+    font-size: 1.4rem;
+    background-color: #343a40;
+    border: none;
+    color: #e9ecef;
+}
+
+main form p {
+    font-family: arial;
+    color: red;
+    font-size: 1.2rem;
+}
+
+main .historico {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background-color: #212529;
+    padding: 20px 40px 15px 40px;
+    gap: 5px;
+    border-radius: 15px;
+}
+
+main .historico h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.8rem;
+    color: #B7E4C7;
+}
+
+main p {
+    font-family: sans-serif;
+    font-size: 1.4rem;
+    color: #dee2e6;
+}
+
+footer {
+    width: 100%;
+    height: auto;
+    min-height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #212529;
+}
+
+footer h2 {
+    font-family: sans-serif;
+    font-size: 1.4rem;
+    color: #A89CD6;
+}
+
+@media (max-width: 480px) {
+
+    body {
+        width: 100dvw;
+        height: 100dvh;
+    }
+
+    header {
+        width: 100%;
+        min-height: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #212529;
+        gap: 5px;
+    }
+
+    header h1 {
+        font-family: "Poppins", sans-serif;
+        font-size: 2.5rem;
+        color: #A89CD6;
+    }
+
+    header ul {
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    header ul li {
+        list-style: none;
+    }
+
+    header ul li a {
+        font-family: sans-serif;
+        font-size: 1rem;
+        color: #e9ecef;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        text-decoration: none;
+    }
+
+    header ul li a:hover {
+        font-size: 1.1rem;
+        color: #B7E4C7;
+    }
+
+    main {
+        width: auto;
+        max-width: none;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        gap: 15px;
+    }
+
+    main h2 {
+        width: 100%;
+        height: auto;
+        font-family: sans-serif;
+        font-size: 1.7rem;
+        color: #B7E4C7;
+    }
+
+    main div {
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    main .lembrete {
+        width: auto;
+        min-width: 350px;
+        max-width: 380px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        background-color: #212529;
+        padding: 15px;
+        gap: 5px;
+        border-radius: 15px;
+    }
+
+    main .lembrete h3 {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.5rem;
+        color: #A89CD6;
+    }
+
+    main .lembrete div {
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+    main .lembrete div b {
+        font-family: sans-serif;
+        font-size: 1.1rem;
+        color: #dee2e6;
+    }
+
+    main .lembrete div p {
+        font-family: sans-serif;
+        font-size: 1.1rem;
+        color: #dee2e6;
+    }
+
+    main .lembrete button {
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: red;
+        opacity: 50%;
+        transition: 0.3s ease-out;
+        font-family: arial;
+        font-size: 1.25rem;
+    }
+
+    main .lembrete button:hover {
+        opacity: 75%;
+        transform: scale(1.05);
+        background: none;
+    }
+
+    main .historico {
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        background-color: #212529;
+        padding: 20px 40px 15px 40px;
+        gap: 5px;
+        border-radius: 15px;
+    }
+
+    main .historico h3 {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.8rem;
+        color: #B7E4C7;
+    }
+
+    main p {
+        font-family: sans-serif;
+        font-size: 1.4rem;
+        color: #dee2e6;
+    }
+
+    footer {
+        width: 100%;
+        height: auto;
+        min-height: 10%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #212529;
+    }
+
+    footer h2 {
+        font-family: sans-serif;
+        font-size: 1rem;
+        color: #A89CD6;
+    }
+}

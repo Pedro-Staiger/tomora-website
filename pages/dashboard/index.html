@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomora | Dashboard</title>
+    <!--Importação CSS-->
+    <link rel="stylesheet" href="config/style.css">
+    <!--Ícone navbar-->
+    <link rel="shortcut icon" href="../../pictures/logo.png">
+    <!--Estilização da barra de navegação (Android)-->
+    <meta name="theme-color" content="#212529">
+    <!--Importação da fonte Poppins-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script type="text/javascript" src="script/main.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Tomora</h1>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../login/index.html">Login</a></li>
+            <li><a href="../registro/index.html">Registre-se</a></li>
+            <li><a href="../download/index.html">Download</a></li>
+            <li><a href="../sobre/index.html">Sobre nós</a></li>
+        </ul>
+    </header>
+    <main>
+        <div>
+            <h2>Lembretes cadastrados</h2>
+            <div id="lembretes"></div>
+            <button class="confirm-button" id="button-show" onclick="showForm()">Criar lembrete💊</button>
+            <form>
+                <input type="text" id="input-name" placeholder="Nome">
+                <input type="text" id="input-dosage" placeholder="Dosagem">
+                <input type="text" id="input-desc" placeholder="Descrição (opcional)">
+                <input type="time" id="input-hour" placeholder="Horário">
+                <button type="button" class="confirm-button" onclick="createReminder()">Criar</button>
+            </form>
+        </div>
+        <div>
+            <h2>Histórico</h2>
+            <div id="historicos"></div>
+        </div>
+    </main>
+    <footer>
+        <h2>Tomora - Saúde Pontual</h2>
+    </footer>
+</body>
+
+</html>
