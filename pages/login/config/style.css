@@ -86,12 +86,12 @@ main {
 main form {
     width: auto;
     height: auto;
-    padding: 50px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    gap: 25px;
+    gap: 15px;
     background-color: #212529;
     box-shadow: 0 0 15px #212529;
     text-align: center;
@@ -290,7 +290,7 @@ footer h2 {
         flex-direction: column;
         justify-content: center;
         align-items: start;
-        gap: 25px;
+        gap: 15px;
         background-color: #212529;
         text-align: center;
     }
@@ -298,17 +298,17 @@ footer h2 {
     main form h2 {
         width: 100%;
         font-family: sans-serif;
-        font-size: 3rem;
+        font-size: 2.5rem;
         color: #B7E4C7;
     }
 
     main form input {
         width: 300px;
         height: 35px;
-        padding: 5px;
+        padding: 10px;
         outline: none;
         font-family: arial;
-        font-size: 1.4rem;
+        font-size: 1.25rem;
         background-color: #343a40;
         border: none;
         color: #e9ecef;
