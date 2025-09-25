@@ -245,7 +245,7 @@ function showHistory(history) {
             history.setAttribute("id", element.id);
 
             const title = document.createElement("h3");
-            title.textContent = element.name;
+            title.textContent = (element.name).toUpperCase();
 
             const divId = document.createElement("div");
             const labelId = document.createElement("b");
