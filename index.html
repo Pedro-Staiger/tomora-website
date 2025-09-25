@@ -11,6 +11,8 @@
     <link rel="shortcut icon" href="pictures/logo.png">
     <!--Estilização da barra de navegação (Android)-->
     <meta name="theme-color" content="#212529">
+    <!--Importação do emailJS-->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <!--Importação da fonte Poppins-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,7 +80,79 @@
 
     </main>
     <footer>
-        <h2>Tomora - Saúde Pontual</h2>
+        <form>
+            <h2>Suporte - Fale conosco</h2>
+            <input type="text" name="nome" id="input-nome" placeholder="Nome">
+            <input type="email" name="email" id="input-email" placeholder="E-mail">
+            <input type="text" name="titulo" id="input-titulo" placeholder="Título">
+            <textarea name="conteudo" id="textarea-conteudo" placeholder="Conteúdo"></textarea>
+            <button type="button" onclick="sendEmail()">Enviar</button>
+            <p id="label">Teste</p>
+        </form>
+        <script type="text/javascript" defer>
+            // Configuração EmailJS
+            emailjs.init('vDdvUZ4V15cup70y9');
+
+            const EMAIL_CONFIG = {
+                serviceID: 'service_cdfztij',
+                templateID: 'template_ouytcle'
+            };
+
+            // Função para enviar email
+            async function sendEmail() {
+                const label = document.querySelector("#label");
+                //Esconde o label
+                label.style.display = "none";
+                // Pega os valores dos campos
+                const nome = document.getElementById('input-nome').value.trim();
+                const email = document.getElementById('input-email').value.trim();
+                const titulo = document.getElementById('input-titulo').value.trim();
+                const conteudo = document.getElementById('textarea-conteudo').value.trim();
+
+                // Verificações básicas
+                if (nome === "" || email === "" || titulo === "" || conteudo === "") {
+                    label.style.display = "flex";
+                    label.textContent = "Preencha os campos corretamente!";
+                    label.style.color = "red";
+                } else {
+                    if (!email.includes('@')) {
+                        label.style.display = "flex";
+                        label.textContent = "Insira um e-mail válido!";
+                        label.style.color = "red";
+                    } else {
+                        try {
+                            label.style.display = "flex";
+                            label.textContent = "Enviando...";
+                            // Dados para o template
+                            const templateParams = {
+                                nome: nome,
+                                email: email,
+                                titulo: titulo,
+                                descricao: conteudo
+                            };
+
+                            // Envia o email
+                            await emailjs.send(EMAIL_CONFIG.serviceID, EMAIL_CONFIG.templateID, templateParams);
+
+                            // Sucesso
+                            label.style.display = "flex";
+                            label.textContent = "Mensagem enviada!";
+                            label.style.color = "#B7E4C7";
+
+                            // Limpa o formulário
+                            document.getElementById('input-nome').value = "";
+                            document.getElementById('input-email').value = "";
+                            document.getElementById('input-titulo').value = "";
+                            document.getElementById('textarea-conteudo').value = "";
+
+                        } catch (error) {
+                            console.error('Erro:', error);
+                            label.textContent = "Erro ao enviar mensagem. Tente novamente.";
+                        }
+                    }
+                }
+            }
+        </script>
     </footer>
 </body>
 

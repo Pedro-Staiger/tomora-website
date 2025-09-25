@@ -237,6 +237,23 @@ main .historico h3 {
     color: #B7E4C7;
 }
 
+main .historico div {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+main .historico div p,
+b {
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: #dee2e6;
+}
+
 main p {
     font-family: sans-serif;
     font-size: 1.4rem;
@@ -408,16 +425,19 @@ footer h2 {
 
     main .historico {
         width: auto;
+        min-width: 350px;
+        max-width: 380px;
         height: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: start;
         background-color: #212529;
-        padding: 20px 40px 15px 40px;
+        padding: 20px;
         gap: 5px;
         border-radius: 15px;
     }
+
 
     main .historico h3 {
         font-family: "Poppins", sans-serif;

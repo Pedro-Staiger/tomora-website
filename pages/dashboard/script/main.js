@@ -8,10 +8,10 @@ if (localStorage.getItem("userId") == "" || localStorage.getItem("userId") == nu
 
 //Parte dos lembretes
 function getReminders() {
-    let id = null;
-    if (localStorage.getItem("linkedId" != null)) {
-        id = localStorage.getItem("linkedId");
-    } else {
+    let id = localStorage.getItem("linkedId");
+    
+    // Se linkedId não existir ou for vazio, usa userId
+    if (!id || id === "" || id === "null" || id === null) {
         id = localStorage.getItem("userId");
     }
 
@@ -164,7 +164,7 @@ function createReminder() {
     } else {
         if (localStorage.getItem("linkedId") != null && localStorage.getItem("userId") != null) {
             let userId = null;
-            if (localStorage.getItem("linkedId" != null)) {
+            if (localStorage.getItem("linkedId") != null) {
                 userId = localStorage.getItem("linkedId");
             } else {
                 userId = localStorage.getItem("userId");
@@ -273,7 +273,7 @@ function showHistory(history) {
 
             const divTaken = document.createElement("div");
             const labelTaken = document.createElement("b");
-            labelTaken.textContent = "Foi tomado?:"
+            labelTaken.textContent = "Status:"
             const taken = document.createElement("p");
             if (element.taken === true) {
                 taken.textContent = "Foi tomado";
@@ -288,7 +288,9 @@ function showHistory(history) {
             history.appendChild(divId);
             history.appendChild(divReminderId);
             history.appendChild(divHour);
-            div.appendChild(divTaken);
+            history.appendChild(divTaken);
+
+            div.appendChild(history)
 
         });
     } else {
