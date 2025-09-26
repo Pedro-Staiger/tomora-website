@@ -20,10 +20,12 @@ function switchType() {
     if (type === "medicado") {
         buttonSwitch.textContent = "Sou auxiliar";
         buttonSwitch.style.background = "#B7E4C7";
+        buttonSwitch.style.color = "#212529";
         type = "auxiliar";
     } else {
         buttonSwitch.textContent = "Sou medicado";
         buttonSwitch.style.background = "#A89CD6";
+        buttonSwitch.style.color = "#e9ecef";
         type = "medicado";
     }
 }
