@@ -162,10 +162,10 @@ function createReminder() {
         formulario.appendChild(texto);
     } else {
         if (localStorage.getItem("linkedId") != null && localStorage.getItem("userId") != null) {
-            let id = localStorage.getItem("linkedId");
+            let userId = localStorage.getItem("linkedId");
             // Se linkedId não existir ou for vazio, usa userId
-            if (!id || id === "" || id === "null" || id === null) {
-                id = localStorage.getItem("userId");
+            if (!userId || userId === "" || userId === "null" || userId === null) {
+                userId = localStorage.getItem("userId");
             }
 
             const novoLembrete = { name, userId, dosage, desc, hour, };
