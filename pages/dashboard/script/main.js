@@ -8,11 +8,10 @@ if (localStorage.getItem("userId") == "" || localStorage.getItem("userId") == nu
 
 //Parte dos lembretes
 function getReminders() {
-    let id = localStorage.getItem("linkedId");
-    
+    let searchId = localStorage.getItem("linkedId");
     // Se linkedId não existir ou for vazio, usa userId
-    if (!id || id === "" || id === "null" || id === null) {
-        id = localStorage.getItem("userId");
+    if (!searchId || searchId === "" || searchId === "null" || searchId === null) {
+        searchId = localStorage.getItem("userId");
     }
 
     fetch("https://tomora.onrender.com/remindersSearch", {
@@ -20,7 +19,7 @@ function getReminders() {
         headers: {
             'Content-Type': 'application/json' // avisar que o corpo é JSON
         },
-        body: JSON.stringify({ "searchId": id })
+        body: JSON.stringify({ searchId })
     }).then(response => {
         if (!response.ok) {
             throw new Error('Erro na requisição: ' + response.status);
@@ -163,11 +162,10 @@ function createReminder() {
         formulario.appendChild(texto);
     } else {
         if (localStorage.getItem("linkedId") != null && localStorage.getItem("userId") != null) {
-            let userId = null;
-            if (localStorage.getItem("linkedId") != null) {
-                userId = localStorage.getItem("linkedId");
-            } else {
-                userId = localStorage.getItem("userId");
+            let id = localStorage.getItem("linkedId");
+            // Se linkedId não existir ou for vazio, usa userId
+            if (!id || id === "" || id === "null" || id === null) {
+                id = localStorage.getItem("userId");
             }
 
             const novoLembrete = { name, userId, dosage, desc, hour, };
@@ -206,13 +204,18 @@ function createReminder() {
 
 //Parte do histórico
 function getHistory() {
-    linkedId = localStorage.getItem("linkedId")
+    let searchId = localStorage.getItem("linkedId");
+    // Se linkedId não existir ou for vazio, usa userId
+    if (!searchId || searchId === "" || searchId === "null" || searchId === null) {
+        searchId = localStorage.getItem("userId");
+    }
+
     fetch("https://tomora.onrender.com/historySearch", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json' // avisar que o corpo é JSON
         },
-        body: JSON.stringify({ linkedId })
+        body: JSON.stringify({ searchId })
     }).then(response => {
         if (!response.ok) {
             throw new Error('Erro na requisição: ' + response.status);
