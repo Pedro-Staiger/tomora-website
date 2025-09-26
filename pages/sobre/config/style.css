@@ -102,10 +102,10 @@ main div {
     width: auto;
     height: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
+    align-items: start;
+    gap: 25px;
 }
 
 main div .membro {
@@ -129,18 +129,35 @@ main div .membro img {
     border-radius: 50%;
 }
 
-main div .membro p {
+main div .membro a {
     width: 100%;
-    font-family: arial;
+    font-family: "Poppins", sans-serif;
     font-size: 1.5rem;
-    color: #e9ecef;
+    font-weight: bold;
+    color: #A89CD6;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+main div .membro a:hover {
+    font-size: 1.55rem;
+    color: #c8b6ff;
 }
 
 main div .membro b {
     width: 100%;
     font-family: arial;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #B7E4C7;
+}
+
+
+main div .membro p {
+    width: 100%;
+    font-family: arial;
+    font-size: 1.3rem;
+    color: #e9ecef;
 }
 
 footer {
@@ -244,6 +261,7 @@ footer h2 {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 50px;
     }
 
     main div .membro {
@@ -253,7 +271,7 @@ footer h2 {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 15px;
+        gap: 10px;
         text-align: center;
     }
 
@@ -270,6 +288,7 @@ footer h2 {
         font-family: arial;
         font-size: 1.1rem;
         color: #e9ecef;
+        text-align: left;
     }
 
     main div .membro b {

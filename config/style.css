@@ -98,6 +98,20 @@ main p {
     color: #e9ecef;
 }
 
+main a {
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    color: #A89CD6;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+main a:hover {
+    font-size: 1.25rem;
+    color: #c8b6ff;
+}
+
 footer {
     width: 100%;
     height: auto;
@@ -248,7 +262,7 @@ footer h2 {
         width: 100%;
         height: auto;
         font-family: sans-serif;
-        font-size: 2rem;
+        font-size: 1.75rem;
         color: #B7E4C7;
     }
 
@@ -257,6 +271,19 @@ footer h2 {
         font-family: arial;
         font-size: 1.1rem;
         color: #e9ecef;
+    }
+
+    main a {
+        font-family: sans-serif;
+        font-size: 1.05rem;
+        color: #A89CD6;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+    }
+
+    main a:hover {
+        font-size: 1.05rem;
+        color: #c8b6ff;
     }
 
     footer form input {
