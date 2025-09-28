@@ -280,8 +280,10 @@ function showHistory(history) {
             const taken = document.createElement("p");
             if (element.taken === true) {
                 taken.textContent = "Foi tomado";
+                title.style.color = "#B7E4C7"
             } else {
                 taken.textContent = "Não foi tomado";
+                title.style.color = "red"
             }
             divTaken.appendChild(labelTaken);
             divTaken.appendChild(taken);

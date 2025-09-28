@@ -1,6 +1,17 @@
 const inputEmail = document.querySelector("#input-email");
 const inputSenha = document.querySelector("#input-senha");
 
+inputEmail.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        getLogin();
+    }
+});
+
+inputSenha.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        getLogin();
+    }
+});
 const label = document.querySelector("#label");
 const loading = document.querySelector("img");
 
@@ -22,7 +33,9 @@ function getLogin() {
     const password = inputSenha.value;
 
     if (email == "" || password == "") {
-        texto.textContent = "Por favor, preencha os campos corretamente";
+        label.style.display = "flex";
+        label.textContent = "Por favor, preencha os campos corretamente";
+        label.style.color = "red";
     } else {
         label.style.display = "flex";
         label.textContent = "Carregando...";

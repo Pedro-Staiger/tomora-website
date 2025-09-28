@@ -1,9 +1,31 @@
+//Declaração das variáveis do switch tipo de conta
 const buttonSwitch = document.querySelector("#button-switch");
 let type = "medicado";
 
+//Declaração das variáveis do loader
 const label = document.querySelector("#label");
 const loading = document.querySelector("img");
 
+//Declaração de função login pela tecla enter em todos inputs
+document.querySelector('#input-nome').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        cadastrar();
+    }
+});
+
+document.querySelector('#input-email').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        cadastrar();
+    }
+});
+
+document.querySelector('#input-senha').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        cadastrar();
+    }
+});
+
+//Função que mostra ou esconde a senha
 function mostrarSenha() {
     const inputSenha = document.querySelector("#input-senha");
     const senha = inputSenha.value
@@ -16,6 +38,7 @@ function mostrarSenha() {
     input.value = senha;
 }
 
+//Função que troca o tipo de conta
 function switchType() {
     if (type === "medicado") {
         buttonSwitch.textContent = "Sou auxiliar";
@@ -30,13 +53,14 @@ function switchType() {
     }
 }
 
+//Função que cadastra o usuário
 function cadastrar() {
-    const inputEmail = document.querySelector("#input-email");
     const inputNome = document.querySelector("#input-nome");
+    const inputEmail = document.querySelector("#input-email");
     const inputSenha = document.querySelector("#input-senha");
 
-    const email = inputEmail.value;
     const name = inputNome.value;
+    const email = inputEmail.value;
     const password = inputSenha.value;
 
     let isMedicado = null;
@@ -49,13 +73,10 @@ function cadastrar() {
         isMedicado = false;
     }
 
-
-    const formulario = document.querySelector("form");
-    const texto = document.createElement("p");
-
-
     if (email == "" || name == "" || password == "") {
-        texto.textContent = "Por favor, preencha os campos corretamente";
+        label.style.display = "flex";
+        label.textContent = "Por favor, preencha os campos corretamente";
+        label.style.color = "red";
     } else {
         const novoUsuario = { email, name, password, isMedicado, isAuxiliar };
         label.style.display = "flex";
